@@ -3,7 +3,7 @@
     <app-recipe-list></app-recipe-list>
   </div>
   <div class="col-md-7">
-    <app-recipe-detail 
+    <!--<app-recipe-detail 
       *ngIf="selectedRecipe; else infoText"
       [name]="selectedRecipe.name" 
       [description]="selectedRecipe.description"
@@ -11,7 +11,9 @@
       [image]="selectedRecipe.imagePath"></app-recipe-detail>
       <ng-template #infoText>
         <p>Please select a recipe.</p>
-      </ng-template>
+      </ng-template>-->
+
+      <router-outlet></router-outlet>
   </div>
 </div>
 
