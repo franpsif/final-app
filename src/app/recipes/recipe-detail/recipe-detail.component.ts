@@ -16,8 +16,8 @@ export class RecipeDetailComponent implements OnInit {
   id: number;
 
   constructor(
-    private shoppingListService: ShoppingListService, 
-    private recipeService: RecipeService, 
+    private shoppingListService: ShoppingListService,
+    private recipeService: RecipeService,
     private route: ActivatedRoute,
     private router: Router
     ) { }
@@ -28,14 +28,19 @@ export class RecipeDetailComponent implements OnInit {
         this.id = +params['id'];
         this.recipe = this.recipeService.getRecipe(this.id);
       }
-    )
-  } 
+    );
+  }
 
-  addIngredientsToShoppingList(){
+  addIngredientsToShoppingList() {
     this.shoppingListService.addListOfElements(this.recipe.ingredients);
   }
 
-  onEditRecipe(){
+  onEditRecipe() {
     this.router.navigate(['edit'], {relativeTo: this.route});
+  }
+
+  onDeleteRecipe() {
+    this.recipeService.deleteRecipe(this.id);
+    this.router.navigate(['../'], {relativeTo: this.route});
   }
 }
