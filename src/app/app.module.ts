@@ -1,3 +1,4 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './core/core.module';
 import { ShoppingListModule } from './shopping-list/shopping-list.module';
 import { AuthModule } from './auth/auth.module';
@@ -9,7 +10,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -23,7 +23,8 @@ import { AppComponent } from './app.component';
     SharedModule,
     AuthModule,
     ShoppingListModule,
-    CoreModule
+    CoreModule,
+    BrowserAnimationsModule
   ],
   bootstrap: [AppComponent]
 })
